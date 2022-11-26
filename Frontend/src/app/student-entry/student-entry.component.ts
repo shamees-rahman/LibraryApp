@@ -23,7 +23,7 @@ submitbtnclick(){
     console.log(res)
     if (res.status=="success"){
       alert("Successfully added")
-      this.myroute.navigateByUrl('viewall')
+      this.myroute.navigateByUrl('/home/viewall')
     }
     else{
       alert("Error")

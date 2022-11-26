@@ -31,7 +31,7 @@ this.api.searchstudent({"name":this.name}).subscribe((res:any)=>{
     let data = {"_id":this._id,"name":this.name,"rollno":this.rollno,"college":this.college,"admno":this.admno}
     console.log(data)
 this.api.updatestudent(data).subscribe((res:any)=>{
-  this.myroute.navigateByUrl('viewall')
+  this.myroute.navigateByUrl('/home/viewall')
 })
   }
   deletebtnclick(){

@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit {
   }
  login(form: any){
 
-  console.log('........',this.user);
+  console.log('---------',this.user);
+  this.router.navigateByUrl('/home');
   
 
   this.auth.loginToBackend(this.user).subscribe(( res:any)=>{

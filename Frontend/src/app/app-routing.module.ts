@@ -7,9 +7,9 @@ import { StudentUpdateComponent } from './student-update/student-update.componen
 import { StudentViewallComponent } from './student-viewall/student-viewall.component';
 import { AuthGuard } from './auth.guard';
 
-const routes: Routes = [{path:'', component:LoginComponent},{path:'home',canActivate:[AuthGuard], component:HomeComponent, children:[{path:'entry', component:StudentEntryComponent},
+const routes: Routes = [{path:'', component:LoginComponent},{path:'home', component:HomeComponent, children:[{path:'entry', component:StudentEntryComponent},
 {path:'viewall', component:StudentViewallComponent},
-{path:'update', component:StudentUpdateComponent}]},{path:'entrymain', component:StudentEntryComponent}
+{path:'update', component:StudentUpdateComponent}]}
 ];
 
 @NgModule({
