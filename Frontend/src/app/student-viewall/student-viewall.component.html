@@ -1,0 +1,23 @@
+
+
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of data">
+        <th scope="row">{{i.name}}</th>
+        <td>{{i.admno}}</td>
+        <td>{{i.rollno}}</td>
+        <td>{{i.college}}</td>
+      </tr>
+    </tbody>
+  </table>

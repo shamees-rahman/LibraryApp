@@ -1,0 +1,63 @@
+<!-- <div class="container">
+    <div class="raw">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+            
+            <div class="row g-3">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+                    <label for="" class="form-label">Admno</label>
+                    <input type="text" [(ngModel)]="admno" name="admno" class="form-control">
+                    <button (click)="searchbtnclick()" class="bt btn-primary">SEARCH</button>
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+                    <label for="" class="form-label">Name</label>
+                    <input type="text" [(ngModel)]="name" name='name' class="form-control">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+                    <label for="" class="form-label">Rollno</label>
+                    <input type="text" [(ngModel)]="rollno" name="rollno" class="form-control">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+                    <label for="" class="form-label">College</label>
+                    <input type="text" [(ngModel)]="college" name="college" class="form-control">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+                    <button (click)="updatebtnclick()" class="bt btn-primary">UPDATE</button>
+                    <button (click)="deletebtnclick()" class="bt btn-primary">DELETE</button>
+                </div>
+            </div> -->
+
+            <div class="container">
+                <div class="raw">
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+                        
+                        <div class="row g-3">
+                            <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+                              <label for="" class="form-label">Title</label>
+                              <input type="text" [(ngModel)]="name" name='name' class="form-control">
+                              <button (click)="searchbtnclick()" class="bt btn-primary">SEARCH</button>
+                          </div>
+                            
+                            <div id='details' class="col col-12 col-sm-12 col-md-12 col-lg-12">
+                                <p>Title : {{name}}<br>Author : {{admno}}<br>Genre : {{rollno}}<br>Rating : {{college}}<br></p>
+                                <button onclick="document.getElementById('edit').style.display='block'" class="bt btn-primary">EDIT THIS ENTRY</button>
+                                
+                            </div>
+                            <div id="edit">
+                                <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+                                    <label for="" class="form-label">Author</label>
+                                    <input type="text" [(ngModel)]="admno" name="admno" class="form-control">
+                                  </div>
+                            <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for="" class="form-label">Genre</label>
+                                <input type="text" [(ngModel)]="rollno" name="rollno" class="form-control">
+                            </div>
+                            <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for="" class="form-label">Rating</label>
+                                <input type="text" [(ngModel)]="college" name="college" class="form-control">
+                            </div>
+                            <div class="col col-12 col-sm-6 col-md-6 col-lg-6">
+                                <button (click)="updatebtnclick()" class="bt btn-primary">UPDATE</button>
+                            </div>
+                            </div>
+
+                        </div>
