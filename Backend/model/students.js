@@ -1,5 +1,6 @@
 const mongoose = require ("mongoose");
-mongoose.connect("mongodb+srv://Shamees:privacytermsmongodb@cluster0.vbrm5tw.mongodb.net/test?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://Shamees:privacytermsmongodb@cluster0.vbrm5tw.mongodb.net/?retryWrites=true&w=majority")
+.then(()=>{console.log("MongoDB connected")}).catch((error)=>{console.log(`MongoDB error: ${error}`)});
 
 const studentschema = mongoose.Schema({
     name: {

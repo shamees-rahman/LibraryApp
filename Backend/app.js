@@ -13,7 +13,24 @@ app.use(cors());
 
 const port = process.env.PORT || 8000;
 
-
+function verifyToken(req,res,next){
+    if (!req.headers.authorization)
+    {
+        return res.status(401).send('Unauthorised Request')
+    }
+    let token = req.headers.authorization.split(' ')[1]
+    if (token=='null')
+    {
+        return res.status(401).send('Unauthorised Request')
+    }
+    let payload = jwt.verify(token,'secretKey')
+    console.log(payload)
+    if(!payload)
+    {
+        return res.status(401).send('Unauthorised Request')
+    }
+    next()
+}
 
 
 app.post('/api/studententry', async (req, res)=>{
@@ -85,34 +102,24 @@ app.delete('/api/studentdelete', (req, res)=>{
 // -
 
 
-app.post('/api/login',(req,res)=>{
+app.post('/api/login', (req,res)=>{
     let userData=req.body;
-    var flag=false;
 
     DATA.find().then(function(user){
-        console.log("user",user);
+        console.log("User",user);
         
         for(let i=0;i<user.length;i++){
-                            console.log("found user",user[i].email);
-
             if(userData.email==user[i].email && userData.password==user[i].password){
-                console.log("found user",user[i].email);
-
-                flag=true;
-                break;
+                console.log("found user");
+                let payload={subject:userData.email+userData.password}
+                let token =jwt.sign(payload,"secretKey");
+                console.log('Token:',token);
+                res.status(200).send({token});
             }else{
-                flag=false;
-            }
-        }
-        if(flag==true){
-            let payload={subject:userData.email+userData.password}
-            let token =jwt.sign(payload,"secretKey");
-            res.status(200).send({token});
-            }
-            else{
                 res.status(401).send("invalid credentials")
             }
-        
+        }
+      
     });
 
 
